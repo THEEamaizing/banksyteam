@@ -48,3 +48,25 @@ public:
             cout << "Account not found!\n";
         }
     }
+    // Function to deposit money
+    void deposit() {
+        int accountNumber;
+        double amount;
+
+        cout << "Enter account number: ";
+        cin >> accountNumber;
+        cout << "Enter amount to deposit: ";
+        cin >> amount;
+
+        if (accounts.find(accountNumber) != accounts.end()) {
+            if (amount < 0) {
+                cout << "Cannot deposit a negative amount!\n";
+                return;
+            }
+
+            accounts[accountNumber].balance += amount;
+            cout << "$" << amount << " deposited successfully!\n";
+        } else {
+            cout << "Account not found!\n";
+        }
+    }
