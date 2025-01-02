@@ -70,3 +70,30 @@ public:
             cout << "Account not found!\n";
         }
     }
+  // Function to withdraw money
+    void withdraw() {
+        int accountNumber;
+        double amount;
+
+        cout << "Enter account number: ";
+        cin >> accountNumber;
+        cout << "Enter amount to withdraw: ";
+        cin >> amount;
+
+        if (accounts.find(accountNumber) != accounts.end()) {
+            if (amount < 0) {
+                cout << "Cannot withdraw a negative amount!\n";
+                return;
+            }
+
+            if (accounts[accountNumber].balance >= amount) {
+                accounts[accountNumber].balance -= amount;
+                cout << "$" << amount << " withdrawn successfully!\n";
+            } else {
+                cout << "Insufficient balance!\n";
+            }
+        } else {
+            cout << "Account not found!\n";
+        }
+    }
+};
