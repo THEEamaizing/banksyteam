@@ -34,4 +34,17 @@ public:
         accounts[accountNumber] = {name, initialDeposit};
 
         cout << "Account created successfully! Your account number is " << accountNumber << "\n";
+    } 
+     // Function to check account balance
+    void checkBalance() {
+        int accountNumber;
+        cout << "Enter account number: ";
+        cin >> accountNumber;
+
+        if (accounts.find(accountNumber) != accounts.end()) {
+            cout << "Account Holder: " << accounts[accountNumber].name << "\n";
+            cout << "Current Balance: $" << accounts[accountNumber].balance << "\n";
+        } else {
+            cout << "Account not found!\n";
+        }
     }
