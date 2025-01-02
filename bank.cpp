@@ -30,3 +30,8 @@ public:
             cout << "Initial deposit cannot be negative!\n";
             return;
         }
+         int accountNumber = nextAccountNumber++;
+        accounts[accountNumber] = {name, initialDeposit};
+
+        cout << "Account created successfully! Your account number is " << accountNumber << "\n";
+    }
