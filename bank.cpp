@@ -16,3 +16,17 @@ private:
 public:
     BankingSystem() : nextAccountNumber(1) {}
 }
+// Function to create a new account
+    void createAccount() {
+        string name;
+        double initialDeposit;
+
+        cout << "Enter your name: ";
+        cin >> name;
+        cout << "Enter initial deposit amount: ";
+        cin >> initialDeposit;
+
+        if (initialDeposit < 0) {
+            cout << "Initial deposit cannot be negative!\n";
+            return;
+        }
