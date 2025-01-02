@@ -95,5 +95,44 @@ public:
         } else {
             cout << "Account not found!\n";
         }
-    }
-};
+    };
+    
+
+
+int main() {
+    BankingSystem bank;
+    int choice;
+
+    do {
+        cout << "\n--- Banking System Menu ---\n";
+        cout << "1. Create Account\n";
+        cout << "2. Check Balance\n";
+        cout << "3. Deposit\n";
+        cout << "4. Withdraw\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            bank.createAccount();
+            break;
+        case 2:
+            bank.checkBalance();
+            break;
+        case 3:
+            bank.deposit();
+            break;
+        case 4:
+            bank.withdraw();
+            break;
+        case 5:
+            cout << "Thank you for using the Banking System!\n";
+            break;
+        default:
+            cout << "Invalid choice! Please try again.\n";
+        }
+    } while (choice != 5);
+
+    return 0;
+}
